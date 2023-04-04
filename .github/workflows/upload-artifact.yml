@@ -1,6 +1,6 @@
 # Publish GitHub release assets (FSDA.mltbx file to be compatible with
 # MathWorks FileExchange new 'link your [repo] to GitHub' feature.)
-name: Publish testFSDA.mltbx to GitHub release assets 
+name: Publish testFSDA.mltbx to GitHub release assets (this is a test)
 
 on:
   push:
