@@ -12,6 +12,9 @@ on:
 #    types:
 #      - published
 
+# Allows you to run this workflow manually from the Actions tab (nice)
+  workflow_dispatch:
+
 jobs:
        
   archive-build-artifacts:
