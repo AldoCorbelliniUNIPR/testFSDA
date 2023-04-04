@@ -1,6 +1,6 @@
 # Publish GitHub release assets (FSDA.mltbx file to be compatible with
 # MathWorks FileExchange new 'link your [repo] to GitHub' feature.)
-name: Publish FSDA.mltbx to GitHub release assets 
+name: Publish testFSDA.mltbx to GitHub release assets 
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
         id: mltbx-check
         shell: bash
         run: |
-          echo "::set-output name=exist::$(test -f ./bin/FSDA.mltbx && echo true || echo false)"
+          echo "::set-output name=exist::$(test -f ./bin/testFSDA.mltbx && echo true || echo false)"
 
       - name: Upload Release Asset
         if: ${{ steps.mltbx-check.outputs.exist == 'true' }}
@@ -53,8 +53,8 @@ jobs:
         with:
           #upload_url: github.event.release.upload_url
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/FSDA.mltbx
-          asset_name: FSDA.mltbx
+          asset_path: ./bin/testFSDA.mltbx
+          asset_name: testFSDA.mltbx
           asset_content_type: application/gzip
 
       - name: Extract tag from this release
