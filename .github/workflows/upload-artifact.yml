@@ -62,10 +62,3 @@ jobs:
         shell: bash
         run: echo "::set-output name=tag::${GITHUB_REF#refs/*/}"
       
-  build-docker-container:
-    needs: archive-build-artifacts
-    uses: ./.github/workflows/reusable-build-docker-container.yml
-    with:
-      matlab-release: latest
-      fsda-release: ${{ needs.archive-build-artifacts.outputs.fsda-release }}
-    secrets: inherit
